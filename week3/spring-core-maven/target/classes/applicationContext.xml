@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="service" class="com.example.demo.MessageServiceImpl"/>
+
+    <!-- Setter injection -->
+    <!-- <bean id="printer" class="com.example.demo.MessagePrinter">
+        <property name="service" ref="service"/>
+    </bean> -->
+
+    <!-- Constructor injection -->
+    <bean id="printer" class="com.example.demo.MessagePrinter">
+        <constructor-arg ref="service"/>
+    </bean>
+
+</beans>
